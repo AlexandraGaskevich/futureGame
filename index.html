@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Волшебная печенька</title>
+
+    <style>
+      img {
+        cursor: pointer;
+        display: flex;
+        margin: auto;
+      }
+      h1 {
+        font-family: Arial, sans-serif;
+        font-size: 200;
+        margin: auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img onclick="tellFuture()" src="cookie.png" alt="Печенька">
+    <h1 id="phrase">Нажми на печеньку, чтобы узнать предсказание!</h1>
+    <script>
+      let $phrase = document.getElementById('phrase')
+      function tellFuture() {
+        let start = ["Однажды", "Грядет пора перемен -", "Еще немного и", "Будь готов: совсем скоро"]
+        let mid = ["ты станешь дизайнить", "ты научишься кодить", "ты бросишь все и будешь делать", "ты начнешь делать", "у тебя появятся", "ты увидишь настоящие"]
+        let end = ["печеньки!", "игры для тостеров!", "ночные горшки!", "игры для котов!", "много таких же предсказаний!", "кружечки!"]
+        let first = ["Для этого тебе нужно", "Записывай порядок действий:"]
+        let second = ["посчитать звёзды и", "лечь пораньше спать и", "поступить в НИУ ВШЭ и"]
+        let third = ["включить компьютер.", "отрастить бороду.", "подружиться с котиком."]
+        let randomStart =
+          start[Math.floor(Math.random() * start.length)]
+        let randomMid =
+          mid[Math.floor(Math.random() * mid.length)]
+        let randomEnd =
+          end[Math.floor(Math.random() * end.length)]
+        let randomFirst =
+          first[Math.floor(Math.random() * first.length)]
+        let randomSecond =
+          second[Math.floor(Math.random() * second.length)]
+        let randomThird =
+          third[Math.floor(Math.random() * third.length)]
+
+        $phrase.textContent = randomStart + " " + randomMid + " " + randomEnd + " " + randomFirst + " " + randomSecond + " " + randomThird
+      }
+    </script>
+  </body>
+</html>
